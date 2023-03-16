@@ -3,16 +3,20 @@ package Principal;
 import java.util.ArrayList;
 import java.util.Random;
 
+// Presentado Por: Andres Leonardo Camargo Cortes
+// ID. 701919
+
 public class Partida {
     private int valorJugada;
     private int turno;
     private ArrayList<String> jugadaConvertida;
     private boolean esGanador;
     private int puntos;
+    private Random numRan;
 
     public Partida() {
         this.jugadaConvertida = new ArrayList<>();
-        this.turno = 0;
+        this.numRan = new Random();
     }
 
     public int getValorJugada() {
@@ -33,10 +37,6 @@ public class Partida {
 
     public ArrayList<String> getJugadaConvertida() {
         return jugadaConvertida;
-    }
-
-    public void setJugadaConvertida(ArrayList<String> jugadaConvertida) {
-        this.jugadaConvertida = jugadaConvertida;
     }
 
     public int getPuntos() {
@@ -62,8 +62,7 @@ public class Partida {
     }
 
     public void jugar() {
-        Random numRan = new Random();
-        this.valorJugada = numRan.nextInt(3) + 1;
+        this.valorJugada = this.numRan.nextInt(3) + 1;
         this.turno += 1;
         if (valorJugada == 1){
             this.jugadaConvertida.add("Piedra");
@@ -116,8 +115,9 @@ public class Partida {
     
     public void limpiarJugadas() {
         this.jugadaConvertida.clear();
-        this.turno = 0;
-        this.puntos = 0;
-        this.esGanador = false;
+        this.setTurno(0);
+        this.setPuntos(0);
+        this.setEsGanador(false);
+        this.setValorJugada(0);
     }    
 }

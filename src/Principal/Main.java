@@ -1,7 +1,8 @@
 package Principal;
 
 import java.util.Scanner;
-
+// Presentado Por: Andres Leonardo Camargo Cortes
+// ID. 701919
 public class Main {
     public static void main(String[] args) {
         Partida mesa = new Partida();
@@ -24,6 +25,7 @@ public class Main {
                     int prt = teclado.nextInt();*/
                     jug1.iniciarJuego(3);
                     jug2.iniciarJuego(3);
+                    System.out.println("Presiona 2 para ver el Ganador");
                     /*System.out.println("Jugador 1: "+jug1.getJugadaConvertida());
                     System.out.println("Jugador 2: "+jug2.getJugadaConvertida());*/
                     break;
